@@ -34,6 +34,7 @@ class Tree {
         return treeNode;
     }
     reBalanceTree() {
+        this.sortedArray = this.mergeSort(this.unsortedArray);
         this.tree = this.buildTree(this.sortedArray);
     }
 
@@ -43,7 +44,6 @@ class Tree {
         }
         if (addToArray) {
             this.unsortedArray.push(value);
-            this.sortedArray = this.mergeSort(this.unsortedArray);
         }
         if (value > pointer.data) {
             if (pointer.right === null) {
